@@ -1,59 +1,48 @@
-# importando as bibliotecas
-from pyzbar import pyzbar
-import cv2 as cv
-from glob import glob
-import time
+# Importando biblioteca
+import cv2
+from pyzbar.pyzbar import decode
+
+# Faça um método para decodificar o código de barras
 
 
-def decode(img):
-    # decodifica todos os códigos de barras de uma imagem
-    decoded_objects = pyzbar.decode(img)
-    for obj in decoded_objects:
-        # desenha o código de barras
-        print("código de barras detectado:", obj)
-        img = draw_barcode(obj, img)
-        # imprimir tipo e dados de código de barras
-        print("Tipo:", obj.type)
-        print("Dados:", obj.data, '\n')
+def BarcodeReader(image):
 
-    return img
+    # leia a imagem no array numpy usando cv2
+    img = cv2.imread(image)
 
+    # Decodifique a imagem do código de barras
+    detectedBarcodes = decode(img)
 
-def draw_barcode(decoded, img):
-    # n_points = len(decoded.polygon)
-    # for i in range(n_points):
-    #     image = cv.line(img, decoded.polygon[i], decoded.polygon[(i+1) % n_points], color=(0, 255, 0), thickness=5)
-    # é só descomentar acima e comentar abaixo se quiser desenhar um polígono e não um retângulo
-    img = cv.rectangle(img, (decoded.rect.left, decoded.rect.top),
-                       (decoded.rect.left + decoded.rect.width,
-                        decoded.rect.top + decoded.rect.height),
-                       color=(0, 255, 0),
-                       thickness=5)
-    return img
+    # Se não for detectado, imprima a mensagem
+    if not detectedBarcodes:
+        print("Barcode Not Detected or your barcode is blank/corrupted!")
+    else:
 
+        # Percorra todos os códigos de barras detectados na imagem
+        for barcode in detectedBarcodes:
 
-def show_img(img):
-    barcodes = glob(img)
-    for barcode_file in barcodes:
-        # carrega a imagem para o opencv
-        img = cv.imread(barcode_file)
-        # decodifica detectar códigos de barras e obter a imagem que é desenhada
-        img = decode(img)
-        # mostra a imagem
-        cv.imshow("Resultado", img)
-        cv.waitKey(0)
-    return img
+            # Localize a posição do código de barras na imagem
+            (x, y, w, h) = barcode.rect
+
+            # Coloque o retângulo na imagem usando
+            # cv2 para destacar o código de barras
+            cv2.rectangle(img, (x-10, y-10),
+                          (x + w+10, y + h+10),
+                          (255, 0, 0), 2)
+
+            if barcode.data != "":
+
+                # Imprima os dados do código de barras
+                print(barcode.data)
+                print(barcode.type)
+
+    # Exibir a imagem
+    cv2.imshow("Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
-
-    # Starts measuring time
-    t_start = time.time()
-
-    # Colocar caminho relativo da imagem
-    show_img("/home/User/Folder/imgs/image")
-
-    # Tempo total decorrido (em ms)
-    elapsed_time = 1000 * (time.time() - t_start)
-
-    print(f"\tTempo médio: {elapsed_time/2:.1f} ms")
+  # Pegue a imagem do usuário
+    image = "Img.jpg"
+    BarcodeReader(image)
