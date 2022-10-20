@@ -19,6 +19,11 @@ Rode no terminal o código abaixo para baixar as bibliotecas necessárias para o
 ```bash
 pip install -r requirements.txt
 ```
+Caso apareça um erro pedindo instalação do pyzbar, rode:
+```bash
+pip install pyzbar
+pip install pyzbar[scripts]
+```
 
 Para rodar o programa selecione o `reader1.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`
 
