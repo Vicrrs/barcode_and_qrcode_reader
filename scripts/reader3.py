@@ -51,7 +51,7 @@ if __name__ == "__main__":
     t_start = time.time()
 
     # Colocar caminho relativo da imagem
-    show_img("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
+    show_img("/home/roza/PycharmProjects/PoC1/imgs/bar16.jpeg")
 
     # Tempo total decorrido (em ms)
     elapsed_time = 1000 * (time.time() - t_start)

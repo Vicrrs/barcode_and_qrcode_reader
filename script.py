@@ -1,6 +1,7 @@
 import numpy as np
 import cv2 as cv
-img = cv.imread("/home/roza/PycharmProjects/PoC1/imgs/bar20.jpeg")
+# testes + testes1
+img = cv.imread("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
 # 4 a 15 descobre a regiao do barcode
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 gradX = cv.Sobel(gray, ddepth=cv.CV_32F, dx=1, dy=0, ksize=-1)

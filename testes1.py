@@ -3,7 +3,7 @@ from pyzbar.pyzbar import decode, ZBarSymbol
 from pyzbar import pyzbar
 
 img = cv2.imread(
-    "imgs/bar16.jpeg")  # if use cv2
+    "imgs/bar15.jpeg")  # if use cv2
 
 # specify code type
 codes = pyzbar.decode(img)  # auto detect code type

@@ -54,7 +54,7 @@ def show_img(img):
 
 if __name__ == "__main__":
 
-    img = cv.imread("/home/roza/PycharmProjects/PoC1/imgs/qr018.jpg")
+    img = cv.imread("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
     show_img(img)
     # vid = cv.VideoCapture(0)
     # ret, frame = vid.read()
