@@ -32,7 +32,7 @@ def draw_barcode(decoded, img):
 
 if __name__ == "__main__":
 
-    barcodes = glob("barcode_types/itf14.png")
+    barcodes = glob("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
     for barcode_file in barcodes:
         # carrega a imagem para o opencv
         img = cv.imread(barcode_file)

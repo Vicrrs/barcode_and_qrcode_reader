@@ -1,0 +1,25 @@
+import numpy as np
+import cv2 as cv
+img = cv.imread("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+gradX = cv.Sobel(gray, ddepth=cv.CV_32F, dx=1, dy=0, ksize=-1)
+gradY = cv.Sobel(gray, ddepth=cv.CV_32F, dx=0, dy=1, ksize=-1)
+gradient = cv.subtract(gradX, gradY)
+gradient = cv.convertScaleAbs(gradient)
+blurred = cv.blur(gradient, (9, 9))
+(_, thresh) = cv.threshold(blurred, 225, 255, cv.THRESH_BINARY)
+kernel = cv.getStructuringElement(cv.MORPH_RECT, (21, 7))
+closed = cv.morphologyEx(thresh, cv.MORPH_CLOSE, kernel)
+closed = cv.erode(closed, None, iterations=4)
+closed = cv.dilate(closed, None, iterations=4)
+(cnts, _) = cv.findContours(closed.copy(),
+                            cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+c = sorted(cnts, key=cv.contourArea, reverse=True)[0]
+rect = cv.minAreaRect(c)
+box = np.int0(cv.boxPoints(rect))
+print(rect)
+print()
+print(box)
+cv.drawContours(img, [box], -1, (0, 255, 0), 3)
+cv.imshow("Image", img)
+cv.waitKey(0)

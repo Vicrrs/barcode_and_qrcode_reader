@@ -26,12 +26,11 @@ def BarcodeReader(image):
 
             # Coloque o retângulo na imagem usando
             # cv2 para destacar o código de barras
-            cv2.rectangle(img, (x-10, y-10),
-                          (x + w+10, y + h+10),
+            cv2.rectangle(img, (x - 10, y - 10),
+                          (x + w + 10, y + h + 10),
                           (255, 0, 0), 2)
 
             if barcode.data != "":
-
                 # Imprima os dados do código de barras
                 print(barcode.data)
                 print(barcode.type)
@@ -43,6 +42,6 @@ def BarcodeReader(image):
 
 
 if __name__ == "__main__":
-  # Pegue a imagem do usuário
+    # Pegue a imagem do usuário
     image = "Img.jpg"
     BarcodeReader(image)

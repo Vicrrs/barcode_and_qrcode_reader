@@ -51,9 +51,9 @@ if __name__ == "__main__":
     t_start = time.time()
 
     # Colocar caminho relativo da imagem
-    show_img("/home/User/Folder/imgs/image")
+    show_img("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
 
     # Tempo total decorrido (em ms)
     elapsed_time = 1000 * (time.time() - t_start)
 
-    print(f"\tTempo médio: {elapsed_time/2:.1f} ms")
+    print(f"\tTempo médio: {elapsed_time / 2:.1f} ms")
