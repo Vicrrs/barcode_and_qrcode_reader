@@ -1,6 +1,6 @@
 # importando as bibliotecas
 from pyzbar import pyzbar
-import cv2 as cv
+import cv2 
 import imutils
 import numpy as np
 
@@ -23,7 +23,7 @@ def decode(img):
 
 def draw_barcode(decoded, img):
 
-    img = cv.rectangle(img, (decoded.rect.left, decoded.rect.top),
+    img = cv2.rectangle(img, (decoded.rect.left, decoded.rect.top),
                        (decoded.rect.left + decoded.rect.width,
                         decoded.rect.top + decoded.rect.height),
                        color=(0, 255, 0),
@@ -47,14 +47,14 @@ def show_img(img):
         img_copy = rotate(img_copy)
     # img = decode(img)
     # mostra a imagem
-    cv.imshow("Resultado", img_)
-    cv.waitKey(0)
+    cv2.imshow("Resultado", img_)
+    cv2.waitKey(0)
     return img
 
 
 if __name__ == "__main__":
 
-    img = cv.imread("/home/roza/PycharmProjects/PoC1/imgs/bar15.jpeg")
+    img = cv2.imread("C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar15.jpeg")
     show_img(img)
     # vid = cv.VideoCapture(0)
     # ret, frame = vid.read()
