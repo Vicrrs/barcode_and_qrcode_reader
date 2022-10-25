@@ -15,7 +15,7 @@ def BarcodeReader(image):
 
     # Se não for detectado, imprima a mensagem
     if not detectedBarcodes:
-        print("Barcode Not Detected or your barcode is blank/corrupted!")
+        print("Código de barras não detectado ou seu código de barras está em branco/corrompido!")
     else:
 
         # Percorra todos os códigos de barras detectados na imagem
