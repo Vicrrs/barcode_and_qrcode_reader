@@ -25,15 +25,18 @@ pip install pyzbar
 pip install pyzbar[scripts]
 ```
 
-Para rodar o programa selecione o `reader1.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`
+Para rodar o programa selecione o `reader4.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`, os outros asquivos `reader.py` mostram a evolução do algoritmo até chegar na solução solicitada.
+A mesma é capaz, agora, de ler qrcode e barcodes em várias posições, verrtical, diagonal e horizontal.
 
 ## Esquema do Repositório
 
 * `barcodes_types:` Imagens de tipos diferentes de Barcodes.
 
-* `imgs:` pasta na qual se encontra as imagens utilizadas para teste do script.
+* `imgs:` Pasta na qual se encontra as imagens utilizadas para teste do script.
 
 * `scripts:` Pasta na qual se encontra o código que faz a leitura de código de barras e Qr code.
+
+* `testes:` Pasta na qual se encontra algoritmos que foram testados para embasar a solução final.
 
 ## Tipos de código de Barras
 Ao todo foram utilizados 6 tipos de códigos de barras:

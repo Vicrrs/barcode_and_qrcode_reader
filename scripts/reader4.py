@@ -1,10 +1,9 @@
 # importando as bibliotecas
 from pyzbar import pyzbar
-import cv2 
+import cv2
 import imutils
-import numpy as np
 
-
+# Função que carrega o decodificador do pyzbar
 def decode(img):
     # decodifica todos os códigos de barras de uma imagem
     decoded_objects = pyzbar.decode(img)
@@ -20,17 +19,16 @@ def decode(img):
 
     return img
 
-
+# Função para desenhar a bbox
 def draw_barcode(decoded, img):
-
     img = cv2.rectangle(img, (decoded.rect.left, decoded.rect.top),
-                       (decoded.rect.left + decoded.rect.width,
-                        decoded.rect.top + decoded.rect.height),
-                       color=(0, 255, 0),
-                       thickness=5)
+                        (decoded.rect.left + decoded.rect.width,
+                         decoded.rect.top + decoded.rect.height),
+                        color=(0, 255, 0),
+                        thickness=5)
     return img
 
-
+# Função para rotacionar a imagem
 def rotate(img):
     rot = imutils.rotate(img, angle=-1)
     return rot
@@ -45,7 +43,6 @@ def show_img(img):
     while img_ is None and i < 180:
         img_ = decode(img_copy)
         img_copy = rotate(img_copy)
-    # img = decode(img)
     # mostra a imagem
     cv2.imshow("Resultado", img_)
     cv2.waitKey(0)
@@ -53,9 +50,10 @@ def show_img(img):
 
 
 if __name__ == "__main__":
-
-    img = cv2.imread("C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar15.jpeg")
+    # Passar o caminho da imagem que deseja testar
+    img = cv2.imread("")
     show_img(img)
+    # se quiser usar a camera descomente abaixo
     # vid = cv.VideoCapture(0)
     # ret, frame = vid.read()
     # while ret:
