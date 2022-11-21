@@ -54,7 +54,7 @@ def show_img(img):
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
-    img = cv2.imread("C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar17.jpeg")
+    img = cv2.imread("C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar15.jpeg")
     show_img(img)
     # se quiser usar a camera descomente abaixo
     # tempo de espera pra rotação
