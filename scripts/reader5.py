@@ -3,6 +3,7 @@ from pyzbar import pyzbar
 import cv2
 import imutils
 
+
 # Função que carrega o decodificador do pyzbar
 def decode(img):
     # decodifica todos os códigos de barras de uma imagem
@@ -17,9 +18,10 @@ def decode(img):
         print("Tipo:", obj.type)
         print("Dados:", obj.data.decode('utf-8'), '\n')
         type_barcode = obj.type
-        data_barcode = obj.data.decode('utf-8') 
+        data_barcode = obj.data.decode('utf-8')
 
     return img, type_barcode, data_barcode
+
 
 # Função para desenhar a bbox
 def draw_barcode(decoded, img):
@@ -29,6 +31,7 @@ def draw_barcode(decoded, img):
                         color=(0, 255, 0),
                         thickness=5)
     return img
+
 
 # Função para rotacionar a imagem
 def rotate(img):
@@ -47,6 +50,7 @@ def read_barcode(img):
         img_copy = rotate(img_copy)
     return img_, type_barcode, data_barcode
 
+
 def show_img(img):
     cv2.imshow('Janela', img)
     cv2.waitKey(0)
@@ -54,7 +58,7 @@ def show_img(img):
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
-    img = cv2.imread("/home/icts-0891/Downloads/PoC_refactor-main (1)/PoC_refactor-main/imgs/bar15.jpeg")
+    img = cv2.imread("C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar15.jpeg")
 
     img_code, type_barcode, data_barcode = read_barcode(img)
 
