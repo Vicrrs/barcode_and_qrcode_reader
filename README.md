@@ -59,4 +59,4 @@ Taxa_de_Acerto = (Acertos/Quantidade)*100
 ```
 ## Conclusão
 
-O script desenvolvido (`reader1.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. Problema que pode ser contornado criando uma base de dados e fazendo treinamento para reconhecimento das classes defeituosas!
+O script desenvolvido (`reader5.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. O mesmo consegue rotacionar as imagens, quando não se encontrama na horizonta, para fazer a leitura. 
