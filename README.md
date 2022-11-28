@@ -1,4 +1,4 @@
-# PoC Refactor
+# Barcode and Qrcode reader
 Esta PoC (prova de conceito) mostra possiveis soluções para leitores de Qr code e código de barras.
 ## Clonando repositório
 Supondo que esteja no Linux, instale o gh:
@@ -12,7 +12,7 @@ Depois clone o repositório:
 
 
 ```bash
-gh repo clone Vicrrs/PoC_refactor
+gh repo clone Vicrrs/barcode_and_qrcode_reader
 ```
 Rode no terminal o código abaixo para baixar as bibliotecas necessárias para o porojeto funcionar!
 
