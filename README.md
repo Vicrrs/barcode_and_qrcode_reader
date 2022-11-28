@@ -41,7 +41,7 @@ pip install pyzbar
 pip install pyzbar[scripts]
 ```
 
-Para rodar o programa selecione o `reader4.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`, os outros asquivos `reader.py` mostram a evolução do algoritmo até chegar na solução solicitada.
+Para rodar o programa selecione o `reader5.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`, os outros asquivos `reader.py` mostram a evolução do algoritmo até chegar na solução solicitada.
 A mesma é capaz, agora, de ler qrcode e barcodes em várias posições, verrtical, diagonal e horizontal.
 
 ## Esquema do Repositório
