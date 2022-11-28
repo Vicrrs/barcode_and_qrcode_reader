@@ -3,6 +3,9 @@
 Explicação do código em português
 
 ---
+```bash
+Neste repositório você irá encontrar um código python que consegue fazer a leitura de códigos de barras e Qrcodes em diferentes posições. Sendo na horizontal, vertical ou Diagonal. Usando uma função do imutils para rotacionar a imagem até ele conseguir ler. O código que consegue fazer a leitura é o scripts/reader5.py. Os outros readers vieram de uma série de tentativas para essa versão final.
+```
 
 
 
