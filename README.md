@@ -1,4 +1,11 @@
 # Barcode and Qrcode reader
+
+Explicação do código em português
+
+---
+
+
+
 Esta PoC (prova de conceito) mostra possiveis soluções para leitores de Qr code e código de barras.
 ## Clonando repositório
 Supondo que esteja no Linux, instale o gh:
