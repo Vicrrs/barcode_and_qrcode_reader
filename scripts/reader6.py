@@ -14,9 +14,6 @@ def decode(img):
         # desenha o código de barras
         print("código de barras detectado:", obj)
         img = draw_barcode(obj, img)
-        # imprimir tipo e dados de código de barras
-        print("Tipo:", obj.type)
-        print("Dados:", obj.data.decode('utf-8'), '\n')
         type_barcode = obj.type
         data_barcode = obj.data.decode('utf-8')
 
