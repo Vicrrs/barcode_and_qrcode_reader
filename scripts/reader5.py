@@ -63,13 +63,3 @@ if __name__ == "__main__":
     img_code, type_barcode, data_barcode = read_barcode(img)
 
     show_img(img_code)
-    # se quiser usar a camera descomente abaixo
-    # vid = cv.VideoCapture(0)
-    # ret, frame = vid.read()
-    # while ret:
-    #     show_img(frame)
-    #     ret, frame = vid.read()
-    #     if cv.waitKey(0) & 0xFF == ord('q'):
-    #         break
-    # vid.release()
-    # cv.destroyAllWindows()
