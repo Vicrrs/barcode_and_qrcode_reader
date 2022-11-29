@@ -61,8 +61,13 @@ def camera():
     camera = cv2.VideoCapture(0)
     ret, frame = camera.read()
     while ret:
-        show_img(frame)
-        frame = read_barcode(frame)
+        """
+        Variar as linhas 67 e 68
+        Variar o metodo chamado na variavel frame (decode e read_barcode)
+        """
+        # ret, frame = camera.read()
+        # show_img(frame)
+        # frame = decode(frame)
         cv2.imshow('Barcode/QR code reader', frame)
         if cv2.waitKey(1) & 0xFF == 27:
             break
