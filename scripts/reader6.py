@@ -56,16 +56,17 @@ def show_img(img):
     cv2.waitKey(0)
 
 
-def camera(read_barcode):
+def camera():
     # se quiser usar a camera descomente abaixo
-    vid = cv2.VideoCapture(0)
-    ret, frame = vid.read()
+    camera = cv2.VideoCapture(0)
+    ret, frame = camera.read()
     while ret:
         show_img(frame)
-        ret, frame = vid.read()
-        if cv2.waitKey(0) & 0xFF == ord('q'):
+        frame = read_barcode(frame)
+        cv2.imshow('Barcode/QR code reader', frame)
+        if cv2.waitKey(1) & 0xFF == 27:
             break
-    vid.release()
+    camera.release()
     cv2.destroyAllWindows()
 
 

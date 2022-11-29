@@ -58,8 +58,7 @@ def show_img(img):
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
-    img = cv2.imread(
-        "C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar16.jpeg")
+    img = cv2.imread("/home/icts-0891/Documentos/Projeto/imgs/bar15.jpeg")
 
     img_code, type_barcode, data_barcode = read_barcode(img)
 
