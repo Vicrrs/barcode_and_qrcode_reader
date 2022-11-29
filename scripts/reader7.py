@@ -1,11 +1,13 @@
 # importando as bibliotecas
-from pyzbar import pyzbar
 import cv2
 import imutils
+import numpy as np
+from pyzbar import pyzbar
+from pyzbar.pyzbar import decode
 
 
 # Função que carrega o decodificador do pyzbar
-def decode(img):
+def decodes(img):
     # decodifica todos os códigos de barras de uma imagem
     decoded_objects = pyzbar.decode(img)
     if not decoded_objects:
@@ -46,7 +48,7 @@ def read_barcode(img):
     # decodifica detectar códigos de barras e obter a imagem que é desenhada
     i = 0
     while img_ is None and i < 180:
-        img_, type_barcode, data_barcode = decode(img_copy)
+        img_, type_barcode, data_barcode = decodes(img_copy)
         img_copy = rotate(img_copy)
     return img_, type_barcode, data_barcode
 
@@ -56,38 +58,43 @@ def show_img(img):
     cv2.waitKey(0)
 
 
-def cam_decode(frame):
-    barcodes = pyzbar.decode(frame)
-    for barcode in barcodes:
-        x, y, w, h = barcode.rect
-        barcode_info = barcode.data.decode('utf-8')
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+def cam_decoder(img):
+    gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    barcode = decode(gray_img)
 
-        font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(frame, barcode_info, (x + 6, y - 6),
-                    font, 0.7, (255, 0, 0), 1)
-        with open("barcode_result.txt", mode='w') as file:
-            file.write("Recognized Barcode:" + barcode_info)
-    return frame
+    for obj in barcode:
+        points = obj.polygon
+        (x, y, w, h) = obj.rect
+        pts = np.array(points, np.int32)
+        pts = pts.reshape((-1, 1, 2))
+        cv2.polylines(img, [pts], True, (0, 255, 0), 3)
+
+        barcodeData = obj.data.decode("utf-8")
+        barcodeType = obj.type
+        string = "Data " + str(barcodeData) + " | Type " + str(barcodeType)
+
+        cv2.putText(frame, string, (x, y),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
+        # print("Barcode: "+barcodeData +" | Type: "+barcodeType)
+        return barcodeData, barcodeType
 
 
 def camera():
-    camera = cv2.VideoCapture(0)
-    ret, frame = camera.read()
-    while ret:
-        ret, frame = camera.read()
-        frame = cam_decode(frame)
-        cv2.imshow('Barcode/QR code reader', frame)
-        if cv2.waitKey(1) & 0xFF == 27:
+    cap = cv2.VideoCapture(0)
+    while True:
+        global frame
+        ret, frame = cap.read()
+        cam_decoder(frame)
+        cv2.imshow('Image', frame)
+        code = cv2.waitKey(10)
+        if code == ord('q'):
             break
-    camera.release()
-    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
     # img = cv2.imread(
-    #     "C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar16.jpeg")
+    #     "/home/icts-0891/Documentos/Projeto/imgs/bar15.jpeg")
 
     # img_code, type_barcode, data_barcode = read_barcode(img)
 
