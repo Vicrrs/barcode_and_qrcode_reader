@@ -63,7 +63,7 @@ def cam_decode(frame):
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, barcode_info, (x + 6, y - 6),
                     font, 0.7, (255, 0, 0), 1)
-        with open("barcode_result.txt", mode='w') as file:
+        with open("códigos_lidos.txt", mode='w') as file:
             file.write("Recognized Barcode:" + barcode_info)
     return frame
 

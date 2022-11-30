@@ -54,7 +54,7 @@ def show_img(img):
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
-    img = cv2.imread("C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar15.jpeg")
+    img = cv2.imread("C:\\Users\\rozas\\PycharmProjects\\barcode_and_qrcode_reader\\imgs\\bar15.jpeg")
     show_img(img)
     # se quiser usar a camera descomente abaixo
     # tempo de espera pra rotação

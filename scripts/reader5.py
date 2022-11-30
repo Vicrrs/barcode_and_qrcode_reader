@@ -58,7 +58,7 @@ def show_img(img):
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
-    img = cv2.imread("/home/icts-0891/Documentos/Projeto/imgs/bar15.jpeg")
+    img = cv2.imread("C:\\Users\\rozas\\PycharmProjects\\barcode_and_qrcode_reader\\imgs\\bar15.jpeg")
 
     img_code, type_barcode, data_barcode = read_barcode(img)
 
