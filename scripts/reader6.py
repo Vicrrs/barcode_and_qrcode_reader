@@ -58,7 +58,7 @@ def cam_decode(frame):
     for barcode in barcodes:
         x, y, w, h = barcode.rect
         barcode_info = barcode.data.decode('utf-8')
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, barcode_info, (x + 6, y - 6),

@@ -23,6 +23,7 @@ def cam_decoder(image):
         # print("Barcode: "+barcodeData +" | Type: "+barcodeType)
         return barcodeData, barcodeType
 
+
 def camera():
     cap = cv2.VideoCapture(0)
     while True:
@@ -33,6 +34,7 @@ def camera():
         code = cv2.waitKey(10)
         if code == ord('q'):
             break
+
 
 if __name__ == "__main__":
     camera()
