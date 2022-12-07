@@ -83,9 +83,10 @@ def camera():
         ret, frame = cap.read()
         cam_decoder(frame)
         cv2.imshow('Image', frame)
-        code = cv2.waitKey(10)
-        if code == ord('q'):
+        if cv2.waitKey(1) & 0xFF == 27:
             break
+    cap.release()
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":

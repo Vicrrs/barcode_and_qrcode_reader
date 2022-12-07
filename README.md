@@ -68,13 +68,6 @@ Ao todo foram utilizados 6 tipos de códigos de barras:
 
 Na qual o algoritmo mostrou leituras promissoras para o `Code 128`,  `Databar`,  `EAN`,  `25 Itercalado`. E mostrou ineficaz para `ITF-14`  e  `UPC`. Por conta de não ter base de dados no pyzbar para esses dois tipos de códigos de barras! Problema pode ser contornado fazendo treinamento a partir de ma base de dados própria.
 
-## Taxa de acerto
-
-A taxa de acerto para o banco de imagens (imgs) foram feitas para as imagens de código de barras com início "bar" e para as imagens de qr code com início "qr". O algoritmo reader1.py mostrou uma taxa de acerto de 75% para os barcodes e 85% para Qr codes.
-
-```bash
-Taxa_de_Acerto = (Acertos/Quantidade)*100
-```
 ## Conclusão
 
 O script desenvolvido (`reader5.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. O mesmo consegue rotacionar as imagens, quando não se encontrama na horizonta, para fazer a leitura. 
