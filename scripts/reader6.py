@@ -32,7 +32,7 @@ def draw_barcode(decoded, img):
 
 # Função para rotacionar a imagem
 def rotate(img):
-    rot = imutils.rotate(img, angle=-1)
+    rot = imutils.rotate(img, angle=-15)
     return rot
 
 
@@ -63,8 +63,8 @@ def cam_decode(frame):
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, barcode_info, (x + 6, y - 6),
                     font, 0.7, (255, 0, 0), 1)
-        with open("códigos_lidos.txt", mode='w') as file:
-            file.write("Recognized Barcode:" + barcode_info)
+        # with open("códigos_lidos.txt", mode='w') as file:
+        #     file.write("Recognized Barcode:" + barcode_info)
     return frame
 
 
@@ -84,10 +84,10 @@ def camera():
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
     img = cv2.imread(
-        "C:\\Users\\rozas\\OneDrive\\Documentos\\GitHub\\PoC_refactor\\imgs\\bar16.jpeg")
+        "/home/icts-0891/Documentos/Projeto/DataSet/barcodes/barcode3/b4.jpg")
 
     img_code, type_barcode, data_barcode = read_barcode(img)
 
     show_img(img_code)
 
-    camera()
+    # camera()

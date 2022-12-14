@@ -72,7 +72,7 @@ def cam_decoder(img):
 
         cv2.putText(frame, string, (x, y),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
-        # print("Barcode: "+barcodeData +" | Type: "+barcodeType)
+        print("Barcode: "+barcodeData +" | Type: "+barcodeType)
         return barcodeData, barcodeType
 
 
@@ -92,10 +92,10 @@ def camera():
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
     img = cv2.imread(
-        "/home/icts-0891/Documentos/Projeto/imgs/bar15.jpeg")
+        "/home/icts-0891/Documentos/Projeto/DataSet/barcodes/barcode1/b2.jpg")
 
     img_code, type_barcode, data_barcode = read_barcode(img)
 
     show_img(img_code)
 
-    camera()
+    # camera()
