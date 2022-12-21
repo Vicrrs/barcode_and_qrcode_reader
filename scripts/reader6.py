@@ -32,7 +32,8 @@ def draw_barcode(decoded, img):
 
 # Função para rotacionar a imagem
 def rotate(img):
-    rot = imutils.rotate(img, angle=-15)
+    # rot = imutils.rotate(img, angle=-15)
+    rot = imutils.rotate_bound(img, angle=-5)
     return rot
 
 
@@ -83,11 +84,11 @@ def camera():
 
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
-    # img = cv2.imread(
-    #     "C:\\Users\\rozas\\PycharmProjects\\barcode_and_qrcode_reader\\DataSet\\barcodes\\barcode1\\b2.jpg")
-    #
-    # img_code, type_barcode, data_barcode = read_barcode(img)
-    #
-    # show_img(img_code)
+    img = cv2.imread(
+        "C:\\Users\\rozas\\PycharmProjects\\barcode_and_qrcode_reader\\DataSet\\rotating\\Rotating07.png")
 
-    camera()
+    img_code, type_barcode, data_barcode = read_barcode(img)
+
+    show_img(img_code)
+
+    # camera()
