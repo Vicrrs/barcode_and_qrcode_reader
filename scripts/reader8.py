@@ -43,7 +43,7 @@ def read_barcode(img):
     img_ = None
     step = 5
     # decodifica detectar códigos de barras e obter a imagem que é desenhada
-    i = 45
+    i = 1
     while img_ is None and i < 180:
         img_, type_barcode, data_barcode = decode(img_copy)
         img_copy = rotate_bound(img_copy, i)
