@@ -33,7 +33,7 @@ def draw_barcode(decoded, img):
 # Função para rotacionar a imagem
 def rotate(img):
     # rot = imutils.rotate(img, angle=-15)
-    rot = imutils.rotate_bound(img, angle=-5)
+    rot = imutils.rotate_bound(img, angle=40)
     return rot
 
 
@@ -43,7 +43,7 @@ def read_barcode(img):
     img_ = None
     # decodifica detectar códigos de barras e obter a imagem que é desenhada
     i = 0
-    while img_ is None and i < 180:
+    while img_copy is None and i < 180:
         img_, type_barcode, data_barcode = decode(img_copy)
         img_copy = rotate(img_copy)
     return img_, type_barcode, data_barcode
