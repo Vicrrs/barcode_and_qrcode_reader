@@ -53,7 +53,7 @@ def show_img(img):
 
 
 def cam_decode(frame):
-    # decodificando barcode/qrcode
+    # decodificando barcode e qrcode
     barcodes = pyzbar.decode(frame)
     for barcode in barcodes:
         x, y, w, h = barcode.rect
