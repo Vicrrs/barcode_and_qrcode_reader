@@ -69,4 +69,4 @@ Na qual o algoritmo mostrou leituras promissoras para o `Code 128`,  `Databar`, 
 
 ## Conclusão
 
-O script desenvolvido (`reader5.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. O mesmo consegue rotacionar as imagens, quando não se encontrama na horizonta, para fazer a leitura. 
+O script desenvolvido (`reader9.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. O mesmo consegue rotacionar as imagens, quando não se encontrama na horizonta, para fazer a leitura. 
