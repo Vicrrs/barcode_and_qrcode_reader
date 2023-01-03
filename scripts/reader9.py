@@ -81,7 +81,7 @@ def camera():
 if __name__ == "__main__":
     # Passar o caminho da imagem que deseja testar
     img = cv2.imread(
-        r"C:\Users\rozas\PycharmProjects\barcode_and_qrcode_reader\DataSet\barcodes\barcode4\b5.jpg")
+        r"C:\Users\rozas\PycharmProjects\barcode_and_qrcode_reader\DataSet\qrcode\qrcode20\q5.jpg")
 
     # Starts measuring time
     t_start = time.time()
