@@ -2,7 +2,6 @@
 
 ## Esta PoC (prova de conceito) mostra possiveis soluções para leitores de Qr code e código de barras.
 
-[Video de demonstração.](https://www.youtube.com/watch?v=LTthYf-Lzjw&ab_channel=VictorRoza)
 
 ### Explicação do código em português
 
