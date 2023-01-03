@@ -36,8 +36,8 @@ def read_barcode(img):
     img_copy = img.copy()
     img_ = None
     step = 5
-    # decodifica detectar códigos de barras e obter a imagem que é desenhada
     i = 1
+    # decodifica detectar códigos de barras e obter a imagem que é desenhada
     while img_ is None and i < 180:
         img_, type_barcode, data_barcode = decode(img_copy)
         if data_barcode:
@@ -46,17 +46,19 @@ def read_barcode(img):
         i += step
     return img_, type_barcode, data_barcode
 
-
+# Funcao para exibir a imagem na janela
 def show_img(img):
     cv2.imshow('Janela', img)
     cv2.waitKey(0)
 
 
 def cam_decode(frame):
+    # decodificando barcode/qrcode
     barcodes = pyzbar.decode(frame)
     for barcode in barcodes:
         x, y, w, h = barcode.rect
         barcode_info = barcode.data.decode('utf-8')
+        # Desenhando bbox azul como contorno
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
         font = cv2.FONT_HERSHEY_DUPLEX
@@ -68,6 +70,7 @@ def cam_decode(frame):
 def camera():
     camera = cv2.VideoCapture(0)
     ret, frame = camera.read()
+    # Laço para mostrar a imagem e fechar a aba
     while ret:
         ret, frame = camera.read()
         frame = cam_decode(frame)
@@ -83,7 +86,7 @@ if __name__ == "__main__":
     img = cv2.imread(
         r"C:\Users\rozas\PycharmProjects\barcode_and_qrcode_reader\DataSet\qrcode\qrcode20\q5.jpg")
 
-    # Starts measuring time
+    # Começa a medir o tempo
     t_start = time.time()
 
     img_code, type_barcode, data_barcode = read_barcode(img)
