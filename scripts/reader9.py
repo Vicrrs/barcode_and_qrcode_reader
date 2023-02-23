@@ -81,21 +81,4 @@ def camera():
     cv2.destroyAllWindows()
 
 
-if __name__ == "__main__":
-    # Passar o caminho da imagem que deseja testar
-    img = cv2.imread(
-        r"C:\Users\rozas\PycharmProjects\barcode_and_qrcode_reader\DataSet\qrcode\qrcode20\q5.jpg")
 
-    # Começa a medir o tempo
-    t_start = time.time()
-
-    img_code, type_barcode, data_barcode = read_barcode(img)
-
-    # Tempo total decorrido (em ms)
-    elapsed_time = 1000 * (time.time() - t_start)
-
-    print(f"\tTempo médio: {elapsed_time / 2:.1f} ms")
-
-    show_img(img_code)
-
-    # camera()
