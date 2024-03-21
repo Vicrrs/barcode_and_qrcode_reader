@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "barcode-and-qrcode-reader"
+version = "0.1.0"
+description = "This is a project about qr code and barcode reader that takes into account any movement of a qrcode"
+authors = ["Victor Roza <victorroza22@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+autopep8 = "1.7.0"
+contourpy = "1.0.5"
+cycler = "0.11.0"
+fonttools = "4.37.4"
+imutils = "0.5.4"
+kiwisolver = "1.4.4"
+matplotlib = "3.6.1"
+numpy = "1.26.4"
+opencv-python = "4.9.0.80"
+packaging = "21.3"
+pillow = "9.2.0"
+pycodestyle = "2.9.1"
+pyparsing = "3.0.9"
+python-dateutil = "2.8.2"
+pyzbar = "0.1.9"
+six = "1.16.0"
+toml = "0.10.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
