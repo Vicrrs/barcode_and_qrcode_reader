@@ -34,15 +34,10 @@ gh repo clone Vicrrs/barcode_and_qrcode_reader
 Rode no terminal o código abaixo para baixar as bibliotecas necessárias para o porojeto funcionar!
 
 ```bash
-pip install -r requirements.txt
-```
-Caso apareça um erro pedindo instalação do pyzbar, rode:
-```bash
-pip install pyzbar
-pip install pyzbar[scripts]
+docker build -t barcode-reader .
 ```
 
-Para rodar o programa selecione o `reader9.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`, os outros asquivos `reader.py` mostram a evolução do algoritmo até chegar na solução solicitada.
+Para rodar o programa selecione o `reader.py`, passando como parâmetro o caminho relativo da imagem em `show_img("/home/User/PoC1/imgs/imagem")`, os outros asquivos `reader.py` mostram a evolução do algoritmo até chegar na solução solicitada.
 A mesma é capaz, agora, de ler qrcode e barcodes em várias posições, verrtical, diagonal e horizontal.
 
 ## Esquema do Repositório
@@ -69,4 +64,4 @@ Na qual o algoritmo mostrou leituras promissoras para o `Code 128`,  `Databar`, 
 
 ## Conclusão
 
-O script desenvolvido (`reader9.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. O mesmo consegue rotacionar as imagens, quando não se encontrama na horizonta, para fazer a leitura. 
+O script desenvolvido (`reader.py`) se mostra eficaz tanto para leitura de Qrcode quanto para códigos de barras de determindas classes. O mesmo consegue rotacionar as imagens, quando não se encontrama na horizonta, para fazer a leitura. 
