@@ -7,10 +7,13 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
-# Install dependencies using Poetry
-RUN poetry install --no-interaction
+# Copy the dependency files and install them
+COPY pyproject.toml poetry.lock* ./
+RUN pip install poetry && \
+    poetry config virtualenvs.create false && \
+    poetry install --no-interaction --no-ansi
 
-# Expose port (optional, comment out if not needed)
+# Expose port (optional, comment out if not found)
 # EXPOSE 8080
 
 # Command to run the application (replace with your actual command)
