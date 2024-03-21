@@ -1,14 +1,16 @@
-from scripts.reader9 import read_barcode, show_img, camera
+from src.reader import read_barcode, show_img, camera
 import cv2
 
-# Pass the path of the image you want to test
-img = cv2.imread(
-    r"C:\Users\rozas\PycharmProjects\barcode_and_qrcode_reader\DataSet\imgs\barcodes\barcode20\b5.jpg")
+# Caminho para a imagem a ser testada
+image_path = "caminho_para_sua_imagem.jpg"
+img = cv2.imread(image_path)
 
-
+# Leitura e exibição do código de barras
 img_code, type_barcode, data_barcode = read_barcode(img)
+if img_code is not None:
+    show_img(img_code)
+else:
+    print("Nenhum código de barras encontrado.")
 
-
-show_img(img_code)
-
+# Para iniciar a leitura de código de barras através da câmera, descomente a linha abaixo
 # camera()
