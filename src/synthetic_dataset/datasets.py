@@ -4,9 +4,9 @@ from barcode.writer import ImageWriter
 from PIL import Image
 import random
 
-def generate_and_save_random_bar_code(num_folder=10, images_by_folder=10):
+def generate_and_save_random_bar_code(num_folder=5, images_by_folder=10):
     for i in range(1, num_folder + 1):
-        name_folder = f'barcode{i}'
+        name_folder = f'C:\\Users\\rozas\\Documents\\Projetos_GITHUB\\barcode_and_qrcode_reader\\imgs\\synthetic_barcodes\\barcode{i}'
         os.makedirs(name_folder, exist_ok=True)
         
         for j in range(images_by_folder):
