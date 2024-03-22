@@ -1,13 +1,12 @@
 from barcode import EAN13
 from barcode.writer import ImageWriter
+import random
 
-
-numero_aleatorio = '123456789012'  
-
-codigo_de_barras = EAN13(numero_aleatorio, writer=ImageWriter())
-
-caminho_da_imagem = 'codigo_de_barras_ean1312.png'
-
-codigo_de_barras.save(caminho_da_imagem)
-
-print("Imagem do código de barras salva como:", caminho_da_imagem)
+def generate_and_save_random_bar_code():
+    random_number = ''.join([str(random.randint(0, 9)) for _ in range(12)])
+    create_barcode = EAN13(random_number, writer=ImageWriter())
+    name_file = f'{random_number}'
+    create_barcode.save(name_file)
+    print(f"Image Barcode '{name_file}' generate!")
+    
+generate_and_save_random_bar_code()
