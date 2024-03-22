@@ -18,18 +18,12 @@ In this repository you will find a python code that can read barcodes and qrcode
 
 
 ## Clonando repositório
-Supondo que esteja no Linux, instale o gh:
+
+
+Clone o repositório:
 
 ```bash
-sudo apt update
-sudo apt install gh
-```
-
-Depois clone o repositório:
-
-
-```bash
-gh repo clone Vicrrs/barcode_and_qrcode_reader
+git clone https://github.com/Vicrrs/barcode_and_qrcode_reader.git
 ```
 Rode no terminal o código abaixo para baixar as bibliotecas necessárias para o porojeto funcionar!
 
@@ -42,13 +36,24 @@ A mesma é capaz, agora, de ler qrcode e barcodes em várias posições, verrtic
 
 ## Esquema do Repositório
 
-* `barcodes_types:` Imagens de tipos diferentes de Barcodes.
-
 * `imgs:` Pasta na qual se encontra as imagens utilizadas para teste do script.
 
-* `scripts:` Pasta na qual se encontra o código que faz a leitura de código de barras e Qr code.
+* `barcodes_types:` Imagens de tipos diferentes de Barcodes.
 
-* `testes:` Pasta na qual se encontra algoritmos que foram testados para embasar a solução final.
+* `synthetic_barcodes`: Imagens geradas sinteticamente com dados randomicos de codigo de barras
+
+* `src`: Códigos e testes feitos!
+
+## Códigos/Scripts utilizados
+
+* `reader.py`: É a solução adotada para ler barcodes em diferentes posições, rotaciona a imagem até ser feita a leitura do barcode!
+
+* `datasets.py`: Gerando imagens randomicas de barcodes em diferentes rotações!
+
+* `barcode_checker.py`: Comparando nome das imagens com a leitura do codigo de barras da imagem e gerando um csv com o resultado da leitura!
+
+* `barcode_quality_checker.py`: Gerando um gráfico para visualizar o resultado da leitura!
+
 
 ## Tipos de código de Barras
 Ao todo foram utilizados 6 tipos de códigos de barras:
