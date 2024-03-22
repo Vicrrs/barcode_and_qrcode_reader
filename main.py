@@ -2,7 +2,7 @@ from src.reader import read_barcode, show_img, camera
 import cv2
 
 # Caminho para a imagem a ser testada
-image_path = "caminho_para_sua_imagem.jpg"
+image_path = "DataSet/imgs/barcode_types/EAN.jpeg"
 img = cv2.imread(image_path)
 
 # Leitura e exibição do código de barras
